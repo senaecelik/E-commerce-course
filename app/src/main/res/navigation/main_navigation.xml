@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.senaecelik.upschool_capstoneproject.view.main.home.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_self"
+            app:destination="@id/homeFragment" />
+        <argument
+            android:name="productModel"
+            app:argType="com.senaecelik.upschool_capstoneproject.data.model.Product" />
+        <action
+            android:id="@+id/action_homeFragment_to_productDetailFragment"
+            app:destination="@id/productDetailFragment"
+            app:enterAnim="@anim/fui_slide_in_right"
+            app:exitAnim="@anim/fui_slide_out_left" />
+        <action
+            android:id="@+id/action_homeFragment_to_favFragment"
+            app:destination="@id/favFragment" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/favFragment"
+        android:name="com.senaecelik.upschool_capstoneproject.view.main.fav.FavoriteFragment"
+        android:label="FavFragment">
+        <argument
+            android:name="productModel"
+            app:argType="com.senaecelik.upschool_capstoneproject.data.model.Product" />
+        <action
+            android:id="@+id/action_favFragment_self"
+            app:destination="@id/favFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/shopFragment"
+        android:name="com.senaecelik.upschool_capstoneproject.view.main.shop.ShopFragment"
+        android:label="ShopFragment">
+        <action
+            android:id="@+id/action_shopFragment_self"
+            app:destination="@id/shopFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.senaecelik.upschool_capstoneproject.view.main.profile.ProfileFragment"
+        android:label="ProfileFragment">
+        <action
+            android:id="@+id/action_profileFragment_self"
+            app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_favFragment"
+            app:destination="@id/favFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_bagFragment"
+            app:destination="@id/bagFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/productDetailFragment"
+        android:name="com.senaecelik.upschool_capstoneproject.view.main.detail.ProductDetailFragment"
+        android:label="ProductDetailFragment">
+        <argument
+            android:name="productModel"
+            app:argType="com.senaecelik.upschool_capstoneproject.data.model.Product" />
+        <action
+            android:id="@+id/action_productDetailFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_productDetailFragment_to_bagFragment"
+            app:destination="@id/bagFragment" />
+        <action
+            android:id="@+id/action_productDetailFragment_to_bagFragment2"
+            app:destination="@id/bagFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/successFragment"
+        android:name="com.senaecelik.upschool_capstoneproject.view.success.SuccessFragment"
+        android:label="SuccessFragment">
+        <action
+            android:id="@+id/action_successFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/bagFragment"
+        android:name="com.senaecelik.upschool_capstoneproject.view.main.bag.BagFragment"
+        android:label="fragment_bag"
+        tools:layout="@layout/fragment_bag" >
+        <action
+            android:id="@+id/action_bagFragment_to_successFragment"
+            app:destination="@id/successFragment" />
+        <action
+            android:id="@+id/action_bagFragment_self"
+            app:destination="@id/bagFragment" />
+    </fragment>
+</navigation>

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout
+
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="productObject"
+            type="com.senaecelik.upschool_capstoneproject.data.model.Product" />
+
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/productCard"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="@dimen/_20sdp"
+        android:layout_margin="@dimen/_10sdp"
+        android:elevation="@dimen/_10sdp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp">
+
+
+            <ImageView
+                android:id="@+id/imageView"
+                style="@style/style_card_image"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="@dimen/_100sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="MissingConstraints"
+                android:contentDescription="@string/string_product_image" />
+
+            <TextView
+                android:id="@+id/productTitle"
+                style="@style/style_text_black_norm"
+                android:layout_width="@dimen/_140sdp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_24sdp"
+                android:layout_marginEnd="@dimen/_21sdp"
+                android:layout_marginStart="@dimen/_25sdp"
+                android:text="@{productObject.productName}"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_13ssp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/imageView"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="@string/string_productTitle" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="@+id/product"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/product"
+                app:layout_constraintTop_toBottomOf="@+id/product">
+
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <TextView
+                android:id="@+id/product"
+                style="@style/style_primaryColor_bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_6sdp"
+                android:text="@{String.valueOf(productObject.productPrice)}"
+                app:layout_constraintStart_toEndOf="@+id/imageView"
+                app:layout_constraintTop_toBottomOf="@+id/productTitle"
+                tools:ignore="MissingConstraints"
+                tools:text="@string/string_productPrice" />
+
+            <TextView
+                android:id="@+id/product2"
+                style="@style/style_primaryColor_bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_6sdp"
+                app:layout_constraintStart_toStartOf="@+id/product"
+                app:layout_constraintTop_toBottomOf="@+id/product"
+                tools:ignore="MissingConstraints"
+                tools:text="@string/string_productPrice" />
+
+            <TextView
+                android:id="@+id/textView7"
+                style="@style/style_primaryColor_bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_2sdp"
+                android:text="@string/string_tl"
+                app:layout_constraintBottom_toBottomOf="@+id/product"
+                app:layout_constraintStart_toEndOf="@+id/product"
+                app:layout_constraintTop_toTopOf="@+id/product">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/tlText"
+                style="@style/style_primaryColor_bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_2sdp"
+                android:text="@string/string_tl"
+                android:textColor="@color/colorPrimaryDark"
+                app:layout_constraintBottom_toBottomOf="@+id/product2"
+                app:layout_constraintStart_toEndOf="@+id/product2"
+                app:layout_constraintTop_toTopOf="@+id/product2">
+
+            </TextView>
+
+            <ImageView
+                android:id="@+id/productDelete"
+                app:layout_constraintBottom_toBottomOf="@+id/product"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/product"
+                app:srcCompat="@drawable/ic_trash"
+                style="@style/style_image_trash"
+                android:contentDescription="@string/string_trash" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView >
+</layout>
