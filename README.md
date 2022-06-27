@@ -1,7 +1,8 @@
 # E-commerce-course
 UpSchool Capstone Project - Course selling application with MVVM (Model, View, ViewModel), LiveData, DataBinding, Retrofit, Room Database, Navigation Component(NavGraph, BottomNav),  Horizontal Adapter(All Books) with ConcatAdapter for Main Screen, Firebase Auth, Picasso, Lottie
 
-<p align="center"><img src="/screenshots/header.png" width="500"></p>
+<p align="center"><img src="https://user-images.githubusercontent.com/48855691/176023370-61e1abf8-f8f6-4535-8f47-2f8ce6cb7e78.png" width="750"></p>
+
 
 
 ## Table of Contents
